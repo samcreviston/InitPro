@@ -35,7 +35,14 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-app.use('/', require('./routes'));
+const routes = require('./routes');
+
+app.use((req, res, next) => {
+  req.db = client.db(); // set the database instance to req.db for controllers
+  next();
+});
+
+app.use('/', routes);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });

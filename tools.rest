@@ -1,0 +1,30 @@
+GET http://localhost:3000/tools HTTP/1.1
+
+### Get all tools
+GET http://localhost:3000/tools HTTP/1.1
+
+### Get a single tool
+GET http://localhost:3000/tools/REPLACE_WITH_TOOL_ID HTTP/1.1
+
+### Create a new tool
+POST http://localhost:3000/tools HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Node.js",
+  "category": "install",
+  "initCommand": "nvm install node",
+  "notes": "good start"
+}
+
+### Update an existing tool
+PUT http://localhost:3000/tools/REPLACE_WITH_TOOL_ID HTTP/1.1
+Content-Type: application/json
+
+{
+  "price": 24.99
+}
+
+### Delete a tool
+DELETE http://localhost:3000/tools/REPLACE_WITH_TOOL_ID HTTP/1.1
+Content-Type: application/json
