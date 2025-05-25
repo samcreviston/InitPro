@@ -4,27 +4,27 @@ GET http://localhost:3000/tools HTTP/1.1
 GET http://localhost:3000/tools HTTP/1.1
 
 ### Get a single tool
-GET http://localhost:3000/tools/REPLACE_WITH_TOOL_ID HTTP/1.1
+GET http://localhost:3000/tools/68327ded27c33bc49b89980c HTTP/1.1
 
 ### Create a new tool
 POST http://localhost:3000/tools HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Node.js",
-  "category": "install",
-  "initCommand": "nvm install node",
-  "notes": "good start"
+  "name": "Express",
+  "category": "Framework",
+  "initCommand": "npx express-generator",
+  "notes": "Minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
 }
 
 ### Update an existing tool
-PUT http://localhost:3000/tools/REPLACE_WITH_TOOL_ID HTTP/1.1
+PUT http://localhost:3000/tools/68327b52bbd5ac5c4ed1d405 HTTP/1.1
 Content-Type: application/json
 
 {
-  "price": 24.99
+  "name": "Node.js"
 }
 
 ### Delete a tool
-DELETE http://localhost:3000/tools/REPLACE_WITH_TOOL_ID HTTP/1.1
+DELETE http://localhost:3000/tools/68327ded27c33bc49b89980c HTTP/1.1
 Content-Type: application/json

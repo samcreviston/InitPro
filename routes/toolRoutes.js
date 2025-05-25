@@ -1,3 +1,4 @@
+console.log('routes/toolRoutes.js loaded');
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/toolController');

@@ -2,14 +2,14 @@ var express = require('express');
 var app = express();
 const port = process.env.PORT || 3000;
 
-// //api documentation UI
-// const swaggerUi = require('swagger-ui-express');
-// const swaggerDocument = require('./swagger-output.json');
-// var options = {
-//   swaggerOptions: {
-//     validatorUrl: null
-//   }
-// };
+//api documentation UI
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger-output.json');
+var options = {
+  swaggerOptions: {
+    validatorUrl: null
+  }
+};
 
 
 //connects to MogoDB by creating a class with a function (client) to create a session and make requests
@@ -43,9 +43,18 @@ app.use((req, res, next) => {
 });
 
 app.use('/', routes);
+console.log('Mounting main router at /');
+
+
+// Add a simple test route to verify server is responding
+app.get('/test', (req, res) => {
+  console.log('Received request on /test');
+  res.status(200).send('Test route is working');
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
 //enable api documetation UI
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));

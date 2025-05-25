@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
+console.log('routes/index.js loaded');
+const routes = require('express').Router();
 
-const toolRoutes = require('./toolRoutes');
+const toolController = require('../controllers/toolController');
 
-router.use('/tools', toolRoutes);
+routes.use('/tools', require('./toolRoutes'));
 
-module.exports = router;
+module.exports = routes;
