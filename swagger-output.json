@@ -13,7 +13,7 @@
   "paths": {
     "/test": {
       "get": {
-        "description": "tests",
+        "description": "test connection to DB",
         "responses": {
           "200": {
             "description": "OK"
@@ -23,7 +23,7 @@
     },
     "/tools/": {
       "get": {
-        "description": "",
+        "description": "Get all tools from DB",
         "responses": {
           "200": {
             "description": "OK"
@@ -34,7 +34,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a new tool",
         "parameters": [
           {
             "name": "tool",
@@ -81,7 +81,7 @@
     },
     "/tools/{id}": {
       "get": {
-        "description": "",
+        "description": "get a tool by ID",
         "parameters": [
           {
             "name": "id",
@@ -103,7 +103,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "update a tool's data",
         "parameters": [
           {
             "name": "id",
@@ -131,8 +131,7 @@
                   "type": "string"
                 },
                 "initCommand": {
-                  "type": "string",
-                  "format": "email"
+                  "type": "string"
                 },
                 "notes": {
                   "type": "string"
@@ -154,7 +153,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "delete a tool",
         "parameters": [
           {
             "name": "id",

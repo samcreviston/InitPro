@@ -12,9 +12,12 @@ Content-Type: application/json
 
 {
   "name": "Express",
-  "category": "Framework",
-  "initCommand": "npx express-generator",
-  "notes": "Minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications."
+  "category": "Backend Framework",
+  "initCommand": "node app.js",
+  "notes": "Minimal and flexible Node.js web application framework.",
+  "officialDocs": "https://expressjs.com/",
+  "installCommand": "npm install express",
+  "currentVersion": "4.18.2"
 }
 
 ### Update an existing tool

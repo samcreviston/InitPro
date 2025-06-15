@@ -31,7 +31,7 @@ const getToolById = async (req, res) => {
 // Create a new tool
 const createTool = async (req, res) => {
   const tool = req.body;
-  const requiredFields = ['name', 'category', 'initCommand', 'notes'];
+  const requiredFields = ['name', 'category', 'initCommand', 'notes', 'officialDocs', 'installCommand', 'currentVersion'];
 
   for (const field of requiredFields) {
     if (!tool[field]) {
