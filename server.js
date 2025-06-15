@@ -1,4 +1,5 @@
 var express = require('express');
+const cors = require('cors');
 var app = express();
 const port = process.env.PORT || 3000;
 
@@ -11,6 +12,11 @@ var options = {
   }
 };
 
+// Add CORS middleware here
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 
 //connects to MogoDB by creating a class with a function (client) to create a session and make requests
 require('dotenv').config(); //loads environment variables from a `.env` file into `process.env`.
