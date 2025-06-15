@@ -31,13 +31,6 @@ const getToolById = async (req, res) => {
 // Create a new tool
 const createTool = async (req, res) => {
   const tool = req.body;
-  const requiredFields = ['name', 'category', 'initCommand', 'notes', 'officialDocs', 'installCommand', 'currentVersion'];
-
-  for (const field of requiredFields) {
-    if (!tool[field]) {
-      return res.status(400).json({ error: `${field} is required.` });
-    }
-  }
 
   try {
     const result = await client.db('ToolsDB').collection('tools').insertOne(tool);
@@ -55,6 +48,10 @@ const createTool = async (req, res) => {
 const updateTool = async (req, res) => {
   const id = req.params.id;
   const updates = req.body;
+
+  if (!updates || Object.keys(updates).length === 0) {
+    return res.status(400).json({ error: 'Update data is required' });
+  }
 
   try {
     const result = await client.db('ToolsDB').collection('tools').updateOne(
