@@ -5,7 +5,7 @@ const doc = {
     title: 'initPro API',
     description: 'Description'
   },
-  host: 'https://initpro.onrender.com'
+  host: 'initpro.onrender.com'
 };
 
 const outputFile = './swagger-output.json';
